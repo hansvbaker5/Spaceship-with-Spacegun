@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.github.han-yaeger:yaeger:2021.2022.3">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/han-yaeger/yaeger/2021.2022.3/yaeger-2021.2022.3.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/han-yaeger/yaeger/2021.2022.3/yaeger-2021.2022.3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/han-yaeger/yaeger/2021.2022.3/yaeger-2021.2022.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
