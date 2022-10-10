@@ -16,6 +16,6 @@ public class Asteroid2 extends DynamicSpriteEntity implements Asteroid, Collided
 
     @Override
     public void onCollision(Collider collider) {
-
+        remove();
     }
 }

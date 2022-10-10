@@ -18,6 +18,7 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
     @Override
     public void setupEntities() {
         addEntity( new Player(new Coordinate2D(50, 0), 5));
+
     }
 
     @Override
