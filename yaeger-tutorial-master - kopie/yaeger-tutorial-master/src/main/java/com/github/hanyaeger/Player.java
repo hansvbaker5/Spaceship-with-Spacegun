@@ -1,17 +1,22 @@
 package com.github.hanyaeger;
 
 import com.github.hanyaeger.api.Coordinate2D;
+import com.github.hanyaeger.api.EntitySpawnerContainer;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.*;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
+import com.github.hanyaeger.core.entities.EntityCollection;
+import com.google.inject.Injector;
 import javafx.scene.input.KeyCode;
 
+import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
-public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, KeyListener, SceneBorderTouchingWatcher, Newtonian, Collided, Collider {
+public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, KeyListener,
+        SceneBorderTouchingWatcher, Newtonian, Collided, Collider {
     private int health;
 
     public Player(Coordinate2D location, int health){
@@ -79,5 +84,9 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
 
         health--;
 
+    }
+
+    public void Shoot(){
+//        spawn();
     }
 }
