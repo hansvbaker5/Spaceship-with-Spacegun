@@ -12,7 +12,7 @@ public class Main extends YaegerGame {
 
     @Override
     public void setupGame() {
-        setGameTitle("Spaceship with Spacepun");
+        setGameTitle("Spaceship with Spacegun");
         setSize(new Size(800, 600));
     }
 
