@@ -1,21 +1,29 @@
 package com.github.hanyaeger;
 
 import com.github.hanyaeger.api.Coordinate2D;
+import com.github.hanyaeger.api.EntitySpawnerContainer;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.*;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
+import com.github.hanyaeger.core.entities.EntityCollection;
+import com.google.inject.Injector;
 import javafx.scene.input.KeyCode;
 
+import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
-public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, KeyListener, SceneBorderTouchingWatcher, Newtonian, Collided, Collider {
+public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, KeyListener,
+        SceneBorderTouchingWatcher, Newtonian, Collided, Collider {
     private int health;
+    private  LaserSpawner laserSpawner;
 
-    public Player(Coordinate2D location, int health){
+    public Player(Coordinate2D location, int health, LaserSpawner laserSpawner){
         super("sprites/Spaceship.png", location, new Size(40,80), 1, 4);
+
+        this.laserSpawner = laserSpawner;
 
         setGravityConstant(0.005);
         setFrictionConstant(0.04);
@@ -59,6 +67,10 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
         } else if(set.isEmpty()){
             setSpeed(0);
         }
+
+        if (set.contains(KeyCode.X)){
+            Shoot();
+        }
     }
 
     @Override
@@ -79,5 +91,11 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
 
         health--;
 
+    }
+
+    public void Shoot(){
+        System.out.println("Is Shooting");
+        laserSpawner.playerLocation = new Coordinate2D(getAnchorLocation().getX() + 10, getAnchorLocation().getY() - 15);
+        laserSpawner.isShoot = true;
     }
 }
