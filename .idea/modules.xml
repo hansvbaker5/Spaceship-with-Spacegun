@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Spaceship-with-Spacegun.iml" filepath="$PROJECT_DIR$/.idea/Spaceship-with-Spacegun.iml" />
-<<<<<<< HEAD
-=======
       <module fileurl="file://$PROJECT_DIR$/yaeger-tutorial-master - kopie/yaeger-tutorial-master/tutorial.iml" filepath="$PROJECT_DIR$/yaeger-tutorial-master - kopie/yaeger-tutorial-master/tutorial.iml" />
->>>>>>> 473dac6af53358438c80c1739d87246a0640212f
     </modules>
   </component>
 </project>
