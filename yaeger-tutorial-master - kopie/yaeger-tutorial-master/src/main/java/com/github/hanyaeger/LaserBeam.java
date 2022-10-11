@@ -17,10 +17,13 @@ public class LaserBeam extends DynamicSpriteEntity implements Collider, Collided
     @Override
     public void onCollision(Collider collider) {
         if (collider.getClass().equals(Asteroid1.class)){
-            System.out.println("Asteroid hit");
+            //ADD POINT: 1
+            ((Asteroid1) collider).remove();
             remove();
         }else{
-            System.out.println("NOPE");
+            //ADD POINT: 2
+            ((Asteroid2) collider).remove();
+            remove();
         }
     }
 }
