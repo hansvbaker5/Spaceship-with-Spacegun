@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="tutorial" options="--add-exports hanyaeger/com.github.hanyaeger.core.entities=waterworld" />
+      <module name="tutorial" options="" />
     </option>
   </component>
 </project>

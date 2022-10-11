@@ -7,11 +7,8 @@ import com.github.hanyaeger.api.entities.*;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
-import com.github.hanyaeger.core.entities.EntityCollection;
-import com.google.inject.Injector;
 import javafx.scene.input.KeyCode;
 
-import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
