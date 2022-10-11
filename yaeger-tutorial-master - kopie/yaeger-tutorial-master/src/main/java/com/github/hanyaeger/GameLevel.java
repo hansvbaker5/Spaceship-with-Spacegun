@@ -24,6 +24,7 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
     @Override
     public void setupEntitySpawners() {
         addEntitySpawner(laserSpawner);
+        addEntitySpawner(new AsteroidSpawner(500, getWidth()));
     }
 }
 
