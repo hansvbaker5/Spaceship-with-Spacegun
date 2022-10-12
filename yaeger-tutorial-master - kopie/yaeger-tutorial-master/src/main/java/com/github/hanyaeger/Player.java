@@ -21,9 +21,12 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
     private TextEntity healthText;
     public TextEntity scoreText;
     private  LaserSpawner laserSpawner;
+    private Main main;
 
-    public Player(Coordinate2D location, TextEntity healthText, TextEntity scoreText, LaserSpawner laserSpawner){
+    public Player(Coordinate2D location, TextEntity healthText, TextEntity scoreText, Main main, LaserSpawner laserSpawner){
         super("sprites/spaceship1.png", location, new Size(40,80), 1, 4);
+
+        this.main = main;
 
         this.laserSpawner = laserSpawner;
         this.healthText = healthText;
@@ -104,8 +107,8 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
         health--;
         healthText.setText("Health: " + health);
 
-        if (health <= 0){
-           System.out.println("You Died!");
+        if (health <= 0) {
+            main.setActiveScene(3);
         }
 
     }
