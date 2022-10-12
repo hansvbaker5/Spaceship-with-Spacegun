@@ -17,18 +17,26 @@ import java.util.Set;
 public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, KeyListener,
         SceneBorderTouchingWatcher, Newtonian, Collided, Collider {
     private int health = 3;
+    public int score = 0;
     private TextEntity healthText;
+    public TextEntity scoreText;
     private  LaserSpawner laserSpawner;
 
-    public Player(Coordinate2D location, TextEntity healthText, LaserSpawner laserSpawner){
+    public Player(Coordinate2D location, TextEntity healthText, TextEntity scoreText, LaserSpawner laserSpawner){
         super("sprites/spaceship1.png", location, new Size(40,80), 1, 4);
 
         this.laserSpawner = laserSpawner;
         this.healthText = healthText;
+        this.scoreText = scoreText;
 
         healthText.setText("Health: " + health);
         healthText.setFont(Font.font("Roboto", FontWeight.NORMAL, 30));
         healthText.setFill(Color.DARKBLUE);
+
+        scoreText.setText("Score: " + score);
+        scoreText.setFont(Font.font("Roboto", FontWeight.NORMAL, 30));
+        scoreText.setFill(Color.DARKBLUE);
+
 
         setGravityConstant(0.005);
         setFrictionConstant(0.04);
@@ -102,9 +110,14 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
 
     }
 
+    public void GainScore(){
+        score++;
+        scoreText.setText("Score: " + score);
+    }
+
     public void Shoot(){
         System.out.println("Is Shooting");
-        laserSpawner.playerLocation = new Coordinate2D(getAnchorLocation().getX() + 10, getAnchorLocation().getY() - 15);
+        laserSpawner.player = this;
         laserSpawner.isShoot = true;
     }
 }

@@ -10,7 +10,7 @@ public class LaserSpawner extends EntitySpawner {
     private final double sceneWidth;
     private final double sceneHeight;
     public boolean isShoot = false;
-    public Coordinate2D playerLocation;
+    public Player player;
 
     public LaserSpawner(double sceneWidth, double sceneHeight) {
         super(100);
@@ -21,7 +21,7 @@ public class LaserSpawner extends EntitySpawner {
     @Override
     protected void spawnEntities() {
         if (isShoot){
-            spawn(new LaserBeam(playerLocation));
+            spawn(new LaserBeam(player));
             isShoot = false;
         }
     }

@@ -7,7 +7,8 @@ import com.github.hanyaeger.api.scenes.DynamicScene;
 
 public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
     private LaserSpawner laserSpawner;
-    private TextEntity healthText = new TextEntity(new Coordinate2D(0, 0), String.valueOf(3));;
+    private TextEntity healthText = new TextEntity(new Coordinate2D(0, 0), String.valueOf(3));
+    private TextEntity scoreText = new TextEntity(new Coordinate2D(0, 50), String.valueOf(0));
     public GameLevel(){
     }
 
@@ -20,7 +21,8 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
     @Override
     public void setupEntities() {
         addEntity(healthText);
-        addEntity(new Player(new Coordinate2D(50, 0), healthText, laserSpawner = new LaserSpawner(getWidth(), getHeight())));
+        addEntity(scoreText);
+        addEntity(new Player(new Coordinate2D(50, 0), healthText, scoreText, laserSpawner = new LaserSpawner(getWidth(), getHeight())));
     }
 
     @Override
