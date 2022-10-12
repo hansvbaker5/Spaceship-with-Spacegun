@@ -17,14 +17,15 @@ import java.util.Set;
 public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, KeyListener,
         SceneBorderTouchingWatcher, Newtonian, Collided, Collider {
     private int health = 3;
+    private TextEntity healthText;
     private  LaserSpawner laserSpawner;
 
-    public Player(Coordinate2D location, int health, LaserSpawner laserSpawner){
+    public Player(Coordinate2D location, TextEntity healthText, LaserSpawner laserSpawner){
         super("sprites/spaceship1.png", location, new Size(40,80), 1, 4);
 
         this.laserSpawner = laserSpawner;
+        this.healthText = healthText;
 
-        TextEntity healthText = new TextEntity(new Coordinate2D(0, 0), String.valueOf(health));
         healthText.setText("Health: " + health);
         healthText.setFont(Font.font("Roboto", FontWeight.NORMAL, 30));
         healthText.setFill(Color.DARKBLUE);
@@ -93,9 +94,10 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
 
     public void Hurt(){
         health--;
+        healthText.setText("Health: " + health);
 
         if (health <= 0){
-            System.out.println("You died!");
+           System.out.println("You Died!");
         }
 
     }
