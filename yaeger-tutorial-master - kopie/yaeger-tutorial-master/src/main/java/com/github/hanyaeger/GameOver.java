@@ -38,6 +38,17 @@ public class GameOver extends StaticScene {
         addEntity(startButton);
 
 
+        var scoreText = new TextEntity(
+                new Coordinate2D(getWidth() / 2, getHeight() / 2 - 70),
+                "Score: " + Player.score
+        );
+
+        scoreText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
+        scoreText.setFill(Color.BLUE);
+        scoreText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 40));
+        addEntity(scoreText);
+
+
 
     }
 }

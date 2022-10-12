@@ -17,7 +17,7 @@ import java.util.Set;
 public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, KeyListener,
         SceneBorderTouchingWatcher, Newtonian, Collided, Collider {
     private int health = 3;
-    public int score = 0;
+    public static int score = 0;
     private TextEntity healthText;
     public TextEntity scoreText;
     private  LaserSpawner laserSpawner;
@@ -108,13 +108,13 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
         healthText.setText("Health: " + health);
 
         if (health <= 0) {
-            main.setActiveScene(3);
+            main.setActiveScene(2);
         }
 
     }
 
-    public void GainScore(){
-        score++;
+    public void GainScore(int point){
+        score += point;
         scoreText.setText("Score: " + score);
     }
 
