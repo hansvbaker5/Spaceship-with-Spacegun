@@ -18,7 +18,7 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
     private  LaserSpawner laserSpawner;
 
     public Player(Coordinate2D location, int health, LaserSpawner laserSpawner){
-        super("sprites/Spaceship.png", location, new Size(40,80), 1, 4);
+        super("sprites/spaceship1.png", location, new Size(40,80), 1, 4);
 
         this.laserSpawner = laserSpawner;
 
