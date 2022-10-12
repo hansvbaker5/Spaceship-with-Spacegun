@@ -19,7 +19,7 @@ public class Main extends YaegerGame {
     @Override
     public void setupScenes() {
         addScene(0, new TitleScene(this));
-        addScene(1, new GameLevel());
-        addScene(2, new GameOver(this));
+        addScene(1, new GameLevel(this));
+//        addScene(2, new GameOverScene(this));
     }
 }
