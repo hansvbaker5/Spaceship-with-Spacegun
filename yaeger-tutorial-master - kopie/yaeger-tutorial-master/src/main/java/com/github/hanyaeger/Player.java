@@ -1,26 +1,33 @@
 package com.github.hanyaeger;
 
 import com.github.hanyaeger.api.Coordinate2D;
-import com.github.hanyaeger.api.EntitySpawnerContainer;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.*;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
+import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
-import java.util.Random;
 import java.util.Set;
 
 public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, KeyListener,
         SceneBorderTouchingWatcher, Newtonian, Collided, Collider {
-    private int health;
+    private int health = 3;
     private  LaserSpawner laserSpawner;
 
     public Player(Coordinate2D location, int health, LaserSpawner laserSpawner){
         super("sprites/spaceship1.png", location, new Size(40,80), 1, 4);
 
         this.laserSpawner = laserSpawner;
+
+        TextEntity healthText = new TextEntity(new Coordinate2D(0, 0), String.valueOf(health));
+        healthText.setText("Health: " + health);
+        healthText.setFont(Font.font("Roboto", FontWeight.NORMAL, 30));
+        healthText.setFill(Color.DARKBLUE);
 
         setGravityConstant(0.005);
         setFrictionConstant(0.04);
@@ -79,18 +86,17 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
     public void onCollision(Collider collider) {
         if (collider.getClass().equals(Asteroid1.class) || collider.getClass().equals(Asteroid2.class)){
             System.out.println("Hit!");
+            Hurt();
             ((DynamicSpriteEntity) collider).remove();
         }
     }
 
     public void Hurt(){
-        setAnchorLocation(
-                new Coordinate2D(new Random().nextInt((int)(getSceneWidth()
-                        - getWidth())),
-                        new Random().nextInt((int)(getSceneHeight() - getHeight())))
-        );
-
         health--;
+
+        if (health <= 0){
+            System.out.println("You died!");
+        }
 
     }
 
