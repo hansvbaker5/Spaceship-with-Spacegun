@@ -97,7 +97,7 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
         healthText.setText("Health: " + health);
 
         if (health <= 0){
-           System.out.println("You Died!");
+
         }
 
     }

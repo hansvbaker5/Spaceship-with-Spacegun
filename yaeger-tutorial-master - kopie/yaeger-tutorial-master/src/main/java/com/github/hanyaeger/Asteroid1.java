@@ -10,6 +10,7 @@ import com.github.hanyaeger.api.scenes.SceneBorder;
 
 public class Asteroid1 extends DynamicSpriteEntity implements Asteroid, Collider, SceneBorderCrossingWatcher {
     private final int speed = 2;
+    private int point = 1;
 
     protected Asteroid1(Coordinate2D initialLocation) {
         super("sprites/asteroidbrown.png", initialLocation, new Size(50, 50));
