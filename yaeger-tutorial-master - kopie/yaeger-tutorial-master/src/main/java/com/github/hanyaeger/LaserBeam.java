@@ -8,8 +8,11 @@ import com.github.hanyaeger.api.entities.impl.SpriteEntity;
 
 public class LaserBeam extends DynamicSpriteEntity implements Collider, Collided {
 
-    public LaserBeam(Coordinate2D location){
-        super("sprites/Beam.png", location);
+    private Player player;
+
+    public LaserBeam(Player player){
+        super("sprites/Beam.png", player.getAnchorLocation());
+        this.player = player;
         System.out.println("Pew");
         setMotion(5, 180d);
     }
@@ -18,10 +21,12 @@ public class LaserBeam extends DynamicSpriteEntity implements Collider, Collided
     public void onCollision(Collider collider) {
         if (collider.getClass().equals(Asteroid1.class)){
             //ADD POINT: 1
+            player.GainScore();
             ((Asteroid1) collider).remove();
             remove();
         }else if(collider.getClass().equals(Asteroid2.class)){
             //ADD POINT: 2
+            player.GainScore();
             ((Asteroid2) collider).remove();
             remove();
         }
