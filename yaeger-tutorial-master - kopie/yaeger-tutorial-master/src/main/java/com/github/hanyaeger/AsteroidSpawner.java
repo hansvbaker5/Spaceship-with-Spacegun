@@ -24,6 +24,6 @@ public class AsteroidSpawner extends EntitySpawner {
 
     private Coordinate2D randomLocation(){
         double x = new Random().nextInt((int) sceneWidth);
-        return new Coordinate2D(x, -50);
+        return new Coordinate2D(x, -10);
     }
 }
