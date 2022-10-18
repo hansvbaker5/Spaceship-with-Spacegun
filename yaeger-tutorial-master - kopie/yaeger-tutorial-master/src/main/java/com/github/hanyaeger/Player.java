@@ -36,11 +36,11 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
 
         healthText.setText("Health: " + health);
         healthText.setFont(Font.font("Roboto", FontWeight.NORMAL, 30));
-        healthText.setFill(Color.DARKBLUE);
+        healthText.setFill(Color.LIGHTBLUE);
 
         scoreText.setText("Score: " + score);
         scoreText.setFont(Font.font("Roboto", FontWeight.NORMAL, 30));
-        scoreText.setFill(Color.DARKBLUE);
+        scoreText.setFill(Color.LIGHTBLUE);
 
 
         setGravityConstant(0.005);
