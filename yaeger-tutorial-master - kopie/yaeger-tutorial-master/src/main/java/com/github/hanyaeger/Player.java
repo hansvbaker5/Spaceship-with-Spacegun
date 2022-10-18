@@ -20,7 +20,7 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
     public static int score = 0;
     private TextEntity healthText;
     public TextEntity scoreText;
-    private  LaserSpawner laserSpawner;
+    private LaserSpawner laserSpawner;
     private Main main;
 
     public Player(Coordinate2D location, TextEntity healthText, TextEntity scoreText, Main main, LaserSpawner laserSpawner){
@@ -96,7 +96,7 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
 
     @Override
     public void onCollision(Collider collider) {
-        if (collider.getClass().equals(Asteroid1.class) || collider.getClass().equals(Asteroid2.class)){
+        if (collider.getClass().equals(Asteroid1.class) || collider.getClass().equals(Asteroid2.class) || collider.getClass().equals(LaserBeam.class)){
             System.out.println("Hit!");
             Hurt();
             ((DynamicSpriteEntity) collider).remove();
@@ -116,6 +116,9 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
     public void GainScore(int point){
         score += point;
         scoreText.setText("Score: " + score);
+        if(score==1||score==2){
+
+        }
     }
 
     public void Shoot(){

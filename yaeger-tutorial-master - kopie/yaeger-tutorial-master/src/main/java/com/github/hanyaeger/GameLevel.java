@@ -7,6 +7,7 @@ import com.github.hanyaeger.api.scenes.DynamicScene;
 
 public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
     private LaserSpawner laserSpawner;
+    private LaserSpawner bossLaserSpawner;
     private TextEntity healthText = new TextEntity(new Coordinate2D(0, 0), String.valueOf(3));
     private TextEntity scoreText = new TextEntity(new Coordinate2D(0, 50), String.valueOf(0));
     private Main main;
