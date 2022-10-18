@@ -7,6 +7,7 @@ import com.github.hanyaeger.api.entities.*;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
+import com.github.hanyaeger.api.scenes.StaticScene;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -77,7 +78,6 @@ public class FirstBoss extends DynamicSpriteEntity implements SceneBorderTouchin
 
 
     public void Shoot(){
-
         System.out.println("Boss Is Shooting");
         bossLaser.boss = this;
     }
