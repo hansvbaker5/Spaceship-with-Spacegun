@@ -47,8 +47,5 @@ public class GameOver extends StaticScene {
         scoreText.setFill(Color.BLUE);
         scoreText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 40));
         addEntity(scoreText);
-
-
-
     }
 }
