@@ -1,6 +1,5 @@
 package com.github.hanyaeger;
 
-import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.EntitySpawner;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 
