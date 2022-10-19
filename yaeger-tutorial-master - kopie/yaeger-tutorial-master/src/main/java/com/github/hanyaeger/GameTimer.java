@@ -14,30 +14,28 @@ public class GameTimer extends EntitySpawner {
     private boolean spawnBoss = false;
     private TextEntity timerText;
     private Main main;
+    private int limit;
 
-    protected GameTimer(TextEntity timerText, Main main) {
+    protected GameTimer(TextEntity timerText, Main main, int limit) {
         super(0);
+        this.limit = limit;
         this.timerText = timerText;
         this.main = main;
     }
 
     public void StartTimer(){
-        second = 0;
+        second = limit;
         Timer();
         timer.start();
     }
 
     public void Timer(){
-        timer = new Timer(1000, new ActionListener(){
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                timerText.setText("Timer: " + second);
-                second++;
-                if(second > 300){
-                    spawnBoss = true;
-                    timer.stop();
-                }
+        timer = new Timer(1000, e -> {
+            timerText.setText("Timer: " + second);
+            second--;
+            if(second == 0){
+                spawnBoss = true;
+                timer.stop();
             }
         });
     }
