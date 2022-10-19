@@ -5,7 +5,7 @@
 
 package com.github.hanyaeger;
 
-import com.github.hanyaeger.FirstBoss.1;
+import com.github.hanyaeger.FirstBoss;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
@@ -41,13 +41,13 @@ public class FirstBoss extends DynamicSpriteEntity implements SceneBorderTouchin
     }
 
     public void notifyBoundaryTouching(SceneBorder border) {
-        switch (1.$SwitchMap$com$github$hanyaeger$api$scenes$SceneBorder[border.ordinal()]) {
-            case 1:
-                this.setMotion((double)this.bossSpeed, Direction.RIGHT);
-                break;
-            case 2:
-                this.setMotion((double)this.bossSpeed, Direction.LEFT);
-        }
+//        switch (SceneBorder[border.ordinal()]) {
+//            case Direction.LEFT:
+//                this.setMotion((double)this.bossSpeed, Direction.RIGHT);
+//                break;
+//            case Direction.RIGHT:
+//                this.setMotion((double)this.bossSpeed, Direction.LEFT);
+//        }
 
     }
 
