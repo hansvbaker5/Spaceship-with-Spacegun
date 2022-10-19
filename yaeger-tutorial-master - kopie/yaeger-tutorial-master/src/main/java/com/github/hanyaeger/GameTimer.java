@@ -45,7 +45,6 @@ public class GameTimer extends EntitySpawner {
         if (spawnBoss){
             System.out.println("Boss spawned!");
             main.setActiveScene(2);
-            spawn(new Asteroid1(new Coordinate2D(0,0)));
             spawnBoss = false;
         }
     }
