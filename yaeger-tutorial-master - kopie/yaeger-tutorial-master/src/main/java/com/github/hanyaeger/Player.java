@@ -89,7 +89,6 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
 
     @Override
     public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
-
     }
 
     @Override
@@ -108,7 +107,6 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
         if (health <= 0) {
             main.setActiveScene(2);
         }
-
     }
 
     public void GainScore(int point){
