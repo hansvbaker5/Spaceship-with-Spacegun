@@ -23,7 +23,7 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
         timerText.setFont(Font.font("Roboto", FontWeight.NORMAL, 30));
         timerText.setFill(Color.LIGHTBLUE);
 
-        timer = new GameTimer(timerText);
+        timer = new GameTimer(timerText, main);
     }
 
     @Override
