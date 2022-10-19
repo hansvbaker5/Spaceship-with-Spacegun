@@ -30,16 +30,12 @@ public class GameTimer extends EntitySpawner {
     }
 
     public void Timer(){
-        timer = new Timer(1000, new ActionListener(){
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                timerText.setText("Timer: " + second);
-                second--;
-                if(second == 0){
-                    spawnBoss = true;
-                    timer.stop();
-                }
+        timer = new Timer(1000, e -> {
+            timerText.setText("Timer: " + second);
+            second--;
+            if(second == 0){
+                spawnBoss = true;
+                timer.stop();
             }
         });
     }
