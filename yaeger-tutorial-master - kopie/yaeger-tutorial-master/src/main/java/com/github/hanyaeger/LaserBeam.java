@@ -8,9 +8,11 @@ package com.github.hanyaeger;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.Direction;
+import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
+import com.github.hanyaeger.api.scenes.SceneBorder;
 
-public class LaserBeam extends DynamicSpriteEntity implements Collider, Collided {
+public class LaserBeam extends DynamicSpriteEntity implements Collider, Collided, SceneBorderCrossingWatcher {
     private Player player;
     private FirstBoss boss;
 
@@ -39,5 +41,10 @@ public class LaserBeam extends DynamicSpriteEntity implements Collider, Collided
             this.remove();
         }
 
+    }
+
+    @Override
+    public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
+        remove();
     }
 }
