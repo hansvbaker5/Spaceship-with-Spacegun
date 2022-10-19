@@ -5,6 +5,7 @@
 
 package com.github.hanyaeger;
 
+import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.Direction;
@@ -15,16 +16,14 @@ public class LaserBeam extends DynamicSpriteEntity implements Collider, Collided
     private FirstBoss boss;
 
     public LaserBeam(Player player) {
-        super("sprites/Beam.png", player.getAnchorLocation());
+        super("sprites/Beam.png", new Coordinate2D(player.getAnchorLocation().getX() + 20, player.getAnchorLocation().getY()));
         this.player = player;
-        System.out.println("Pew");
         this.setMotion(5.0, 180.0);
     }
 
     public LaserBeam(FirstBoss boss) {
         super("sprites/Beam.png", boss.getAnchorLocation());
         this.boss = boss;
-        System.out.println("BOOM");
         this.setMotion(5.0, Direction.DOWN);
     }
 

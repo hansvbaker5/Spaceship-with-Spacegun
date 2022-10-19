@@ -94,7 +94,6 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
     @Override
     public void onCollision(Collider collider) {
         if (collider.getClass().equals(Asteroid1.class) || collider.getClass().equals(Asteroid2.class)){
-            System.out.println("Hit!");
             Hurt();
             ((DynamicSpriteEntity) collider).remove();
         }
@@ -115,7 +114,6 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
     }
 
     public void Shoot(){
-        System.out.println("Is Shooting");
         laserSpawner.player = this;
         laserSpawner.isShoot = true;
     }

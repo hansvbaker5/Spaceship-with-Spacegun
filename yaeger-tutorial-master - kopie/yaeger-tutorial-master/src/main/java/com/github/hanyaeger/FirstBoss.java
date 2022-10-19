@@ -80,7 +80,6 @@ public class FirstBoss extends DynamicSpriteEntity implements SceneBorderTouchin
     }
 
     public void Shoot() {
-        System.out.println("Boss Is Shooting");
         this.bossLaser.boss = this;
     }
 }
