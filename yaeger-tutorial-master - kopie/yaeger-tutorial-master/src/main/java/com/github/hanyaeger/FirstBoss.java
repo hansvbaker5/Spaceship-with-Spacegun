@@ -41,13 +41,16 @@ public class FirstBoss extends DynamicSpriteEntity implements SceneBorderTouchin
     }
 
     public void notifyBoundaryTouching(SceneBorder border) {
-//        switch (SceneBorder[border.ordinal()]) {
-//            case Direction.LEFT:
-//                this.setMotion((double)this.bossSpeed, Direction.RIGHT);
-//                break;
-//            case Direction.RIGHT:
-//                this.setMotion((double)this.bossSpeed, Direction.LEFT);
-//        }
+        switch (border) {
+            case LEFT:
+                setMotion(bossSpeed, Direction.RIGHT);
+                break;
+            case RIGHT:
+                setMotion(bossSpeed, Direction.LEFT);
+                break;
+            default:
+                break;
+        }
 
     }
 
