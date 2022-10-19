@@ -13,10 +13,12 @@ public class GameTimer extends EntitySpawner {
     private int second;
     private boolean spawnBoss = false;
     private TextEntity timerText;
+    private Main main;
 
-    protected GameTimer(TextEntity timerText) {
+    protected GameTimer(TextEntity timerText, Main main) {
         super(0);
         this.timerText = timerText;
+        this.main = main;
     }
 
     public void StartTimer(){
@@ -32,7 +34,7 @@ public class GameTimer extends EntitySpawner {
             public void actionPerformed(ActionEvent e) {
                 timerText.setText("Timer: " + second);
                 second++;
-                if(second > 180){
+                if(second > 300){
                     spawnBoss = true;
                     timer.stop();
                 }
@@ -44,6 +46,7 @@ public class GameTimer extends EntitySpawner {
     protected void spawnEntities() {
         if (spawnBoss){
             System.out.println("Boss spawned!");
+            main.setActiveScene(2);
             spawn(new Asteroid1(new Coordinate2D(0,0)));
             spawnBoss = false;
         }
