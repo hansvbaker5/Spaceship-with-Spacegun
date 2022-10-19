@@ -29,7 +29,7 @@ public class TitleScene extends StaticScene {
                 "Spaceship with Spacegun"
         );
         waterworldText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
-        waterworldText.setFill(Color.DARKBLUE);
+        waterworldText.setFill(Color.VIOLET);
         waterworldText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 40));
         addEntity(waterworldText);
 

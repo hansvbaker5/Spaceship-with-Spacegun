@@ -29,7 +29,7 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
     @Override
     public void setupScene() {
         setBackgroundAudio("audio/spaceship-ambience-with-effects-21420.mp3");
-        setBackgroundImage("backgrounds/backgroundspace.jpg", true);
+        setBackgroundImage("backgrounds/space.jpg", true);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class GameLevel extends DynamicScene implements EntitySpawnerContainer {
         addEntity(healthText);
         addEntity(scoreText);
         addEntity(timerText);
-        addEntity(new Player(new Coordinate2D(50, 0), healthText, scoreText, main, laserSpawner = new LaserSpawner(getWidth(), getHeight())));
+        addEntity(new Player(new Coordinate2D(getWidth() / 2 - 50, getHeight() - 20), healthText, scoreText, main, laserSpawner = new LaserSpawner()));
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.github.hanyaeger;
 
+import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
@@ -9,9 +10,8 @@ public class LaserBeam extends DynamicSpriteEntity implements Collider, Collided
     private Player player;
 
     public LaserBeam(Player player){
-        super("sprites/Beam.png", player.getAnchorLocation());
+        super("sprites/Beam.png", new Coordinate2D(player.getAnchorLocation().getX() + 20, player.getAnchorLocation().getY()));
         this.player = player;
-        System.out.println("Pew");
         setMotion(5, 180d);
     }
 

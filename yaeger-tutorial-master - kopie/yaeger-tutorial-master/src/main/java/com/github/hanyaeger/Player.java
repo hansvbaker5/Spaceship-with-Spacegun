@@ -24,7 +24,7 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
     private Main main;
 
     public Player(Coordinate2D location, TextEntity healthText, TextEntity scoreText, Main main, LaserSpawner laserSpawner){
-        super("sprites/spaceship1.png", location, new Size(40,80), 1, 4);
+        super("sprites/rsH6n.png", location, new Size(100,50), 1, 1);
 
         this.main = main;
 
@@ -72,16 +72,12 @@ public class Player extends DynamicSpriteEntity implements SceneBorderCrossingWa
     public void onPressedKeysChange(Set<KeyCode> set) {
         if(set.contains(KeyCode.LEFT)){
             setMotion(3,270d);
-            setCurrentFrameIndex(1);
         } else if(set.contains(KeyCode.RIGHT)){
             setMotion(3,90d);
-            setCurrentFrameIndex(2);
         } else if(set.contains(KeyCode.UP)){
             setMotion(3,180d);
-            setCurrentFrameIndex(0);
         } else if(set.contains(KeyCode.DOWN)){
             setMotion(3,0d);
-            setCurrentFrameIndex(3);
         } else if(set.isEmpty()){
             setSpeed(0);
         }
